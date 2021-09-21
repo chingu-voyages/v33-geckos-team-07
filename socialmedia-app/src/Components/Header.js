@@ -1,6 +1,7 @@
 import React from 'react';
 import logo_camera from '../logo_camera.png'
 
+
 export default function Header() {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
@@ -8,9 +9,11 @@ export default function Header() {
             <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-white">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-auto relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                        {/* Website logo */}
+
+                    {/* Website logo */}
                         <a href="/" className="flex items-center px-2">
                             <img src={logo_camera} className="h-11 w-15 mr-2" alt="logo"></img>
+
                         </a>
 
                     </div>
@@ -46,6 +49,7 @@ export default function Header() {
                             </li>
 
                         </ul>
+
                     </div>
                 </div>
             </nav>
