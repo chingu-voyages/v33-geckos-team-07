@@ -1,5 +1,6 @@
 import React from 'react';
-// import logo from '../logo512.png'
+import logo_camera from '../logo_camera.png'
+
 
 export default function Header() {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -11,62 +12,44 @@ export default function Header() {
 
                     {/* Website logo */}
                         <a href="/" className="flex items-center px-2">
-                            <span className="material-icons h-8 w-8 mr-2">
-                                add_a_photo
-                            </span>
+                            <img src={logo_camera} className="h-11 w-15 mr-2" alt="logo"></img>
+
                         </a>
 
                     </div>
 
                     {/* Branding name */}
-                    <div className="flex text-orange items-center font-mono lg:text-3xl md:text-xl xs:text-lg xl:pl-16">
+                    <div className="flex text-orange items-center font-mono text-5xl xl:pl-16">
                         <h1>Travelli</h1>
                     </div>
 
-                    <div>
+                    <button
+                        className="text-orange cursor-pointer  leading-none px-3 py-1 border-solid border-transparent rounded bg-transparent border block lg:hidden outline-none focus:outline-none"
+                        type="button"
+                        onClick={() => setNavbarOpen(!navbarOpen)}>
+                        <i className="fas fa-bars"></i>
+                    </button>
+                    <div
+                        className={
+                            "lg:flex items-center" +
+                            (navbarOpen ? " flex" : " hidden")
+                        }
+                    >
 
-                    {/* Mobile nav */}
-                        <button
-                            className="text-orange cursor-pointer  leading-none px-3 py-1 
-                            rounded bg-transparent border block 
-                            lg:hidden outline-none focus:outline-none"
-                            type="button"
-                            onClick={() => setNavbarOpen(!navbarOpen)}
-                        >
-                            <span className="material-icons">
-                                reorder
-                            </span>
+                        <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                            <li className="nav-item">
+                                <a className="px-3 py-2 flex items-center text-orange font-serif text-lg font-semibold" href="/">
+                                    Login
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="px-3 py-2 flex items-center items-center text-orange font-serif text-lg font-semibold" href="/">
+                                  Contact
+                                </a>
+                            </li>
 
-                        </button>
-                        <div
-                            className={
-                                "lg:flex items-center" +
-                                (navbarOpen ? " flex" : " hidden")
-                            }
+                        </ul>
 
-                        >
-
-                    {/* Primary nav links */}
-                            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                                <li className="nav-item">
-                                    <a
-                                        className="px-3 py-2 flex items-center text-orange font-serif lg:text-lg lg:font-semibold md:text-md md:font-normal"
-                                        href="/"
-                                    >
-                                        Login
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a
-                                        className="px-3 py-2 flex items-center items-center text-orange font-serif lg:text-lg lg:font-semibold md:text-md md:font-normal"
-                                        href="/"
-                                    >
-                                        Contact
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </nav>
