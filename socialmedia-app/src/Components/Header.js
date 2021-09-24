@@ -1,5 +1,7 @@
 import React from 'react';
 import logo_camera from '../logo_camera.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Header() {
@@ -19,7 +21,7 @@ export default function Header() {
                     </div>
 
                     {/* Branding name */}
-                    <div className="flex text-orange items-center font-mono text-5xl xl:pl-16">
+                    <div className="flex text-orange items-center font-mono lg:text-3xl md:text-2xl sm:text-xl">
                         <h1>Travelli</h1>
                     </div>
 
@@ -27,26 +29,21 @@ export default function Header() {
                         className="text-orange cursor-pointer  leading-none px-3 py-1 border-solid border-transparent rounded bg-transparent border block lg:hidden outline-none focus:outline-none"
                         type="button"
                         onClick={() => setNavbarOpen(!navbarOpen)}>
-                        <i className="fas fa-bars"></i>
+                        <FontAwesomeIcon icon={faBars} />
                     </button>
                     <div
                         className={
                             "lg:flex items-center" +
                             (navbarOpen ? " flex" : " hidden")
-                        }
-                    >
+                        }>
 
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                             <li className="nav-item">
-                                <a className="px-3 py-2 flex items-center text-orange font-serif text-lg font-semibold" href="/">
+                                <a className="px-3 py-2 flex items-center text-orange hover:text-black font-serif lg:text-lg lg:font-semibold md:font-normal md:text-md" href="/">
                                     Login
                                 </a>
                             </li>
-                            <li className="nav-item">
-                                <a className="px-3 py-2 flex items-center items-center text-orange font-serif text-lg font-semibold" href="/">
-                                  Contact
-                                </a>
-                            </li>
+                    
 
                         </ul>
 
